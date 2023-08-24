@@ -1,0 +1,43 @@
+<%- include("partials/header.ejs") %>
+
+<div class="container text-center mt-5">
+    <div class="row justify-content-center align-items-center">
+        <% if (locals.content) { %>
+            <% console.log(content) %>
+            <% if (status === "normal") { %>
+                <% cryptos.forEach(crypto => { %>
+                    <div class="col mb-3">
+                        <div class="card pt-2" style="width: 18rem;">
+                            <div> 
+                                <img src="images/<%=`${crypto}`%>.png" class="card-img-top logo-crypto" alt="...">
+                            </div>
+                            <div class="card-body">
+                            <h5 class="card-title"> Price: €<%= content[crypto].eur %></h5>
+                            </div>
+                        </div>
+                    </div>            
+                <% });  %>
+            <% } else { %>
+                <div class="col-6 ">
+                    <div class="card flex-row flex-wrap justify-content-center mb-3 py-2 ">
+                        <div class="card-header border-0">
+                            <img src="images/defichain.png" class="card-img-top" alt="...">
+                        </div>
+                        <div class="card-block px-2 defi">
+                            <div >
+                                <h4 class="card-title">Price only at <%= content["defichain"].eur %></h4>
+                                <a href="https://bake.io/" class="btn btn-primary">BUY NOW!!!</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <% } %>
+        <% } %>
+    </div>
+</div>
+
+
+
+
+
+<%- include("partials/footer.ejs") %>

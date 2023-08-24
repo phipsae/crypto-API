@@ -1,0 +1,16 @@
+footer {
+    display: flex;
+    justify-content: center;
+    font-size: 12px;
+}
+
+.defi {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-crypto {
+    max-height: 150px;
+    max-width: 150px;
+}
